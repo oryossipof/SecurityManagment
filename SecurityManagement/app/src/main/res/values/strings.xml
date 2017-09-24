@@ -7,4 +7,5 @@
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="title_activity_main_screen">MainScreenActivity</string>
+    <string name="title_activity_add_event">AddEventActivity</string>
 </resources>
