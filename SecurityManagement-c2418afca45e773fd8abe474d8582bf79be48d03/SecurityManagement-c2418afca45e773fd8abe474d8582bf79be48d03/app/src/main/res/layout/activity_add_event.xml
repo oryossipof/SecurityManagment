@@ -123,9 +123,9 @@
 
     </LinearLayout>
 
-   <!-- <Button
+    <Button
         android:id="@+id/showEventsBt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logbook Events" />-->
+        android:text="Logbook Events" />
 </LinearLayout>

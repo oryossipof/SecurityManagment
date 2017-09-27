@@ -49,7 +49,7 @@ private Button userManagementBT,exitBT, porterageBT,eventActBt;
         eventActBt = (Button) findViewById(R.id.logBookBT);
       eventActBt.setOnClickListener(new View.OnClickListener() {
            public void onClick(View view) {
-                Intent intent = new Intent(MainScreenActivity.this, LogbookEvents.class);
+                Intent intent = new Intent(MainScreenActivity.this, AddEventAct.class);
                intent.putExtra("myID", myID);
                intent.putExtra("myUsername",myUsername);
                startActivity(intent);

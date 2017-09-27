@@ -1,6 +1,8 @@
 package com.example.oryossipof.securitymanagement;
 
 import android.content.Context;
+import android.content.pm.LauncherApps;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -10,9 +12,13 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.IgnoreExtraProperties;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.Callable;
 
 /**
  * Created by or yossipof on 21/09/2017.
@@ -51,10 +57,15 @@ class DataBase {
     }
 
 
-    public static void addEventToDataBase(String dateandTime, String str, String currentDateandTime) {
+    public static void addEventToDataBase(String dateandTime, String myUsername, String description, String hour_minutes, String timetoshow) {
+
+
         Firebase mRefChild = myRef.child("Events");
         mRefChild.push();
-        mRefChild.child(dateandTime+"").setValue(currentDateandTime + ":"+ str);
+        mRefChild.child(dateandTime).child(hour_minutes).child("time").setValue(timetoshow);
+        mRefChild.child(dateandTime).child(hour_minutes).child("username").setValue(myUsername);
+        mRefChild.child(dateandTime).child(hour_minutes).child("description").setValue(description);
+
 
     }
 
@@ -67,3 +78,6 @@ class DataBase {
 
     }
 }
+
+
+
