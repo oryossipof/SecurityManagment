@@ -13,7 +13,7 @@ import android.widget.Button;
 
 public class MainScreenActivity extends AppCompatActivity {
     private DataBase db;
-private Button userManagementBT,exitBT, porterageBT,eventActBt;
+private Button userManagementBT,exitBT, porterageBT,eventActBt,lostsBT;
     private String myID;
     private String myUsername;
     private final String  ADMIN = "000000000";
@@ -71,8 +71,22 @@ private Button userManagementBT,exitBT, porterageBT,eventActBt;
         porterageBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(MainScreenActivity.this, LoginActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(MainScreenActivity.this, PorterageActivity.class);
+                intent.putExtra("myID", myID);
+                intent.putExtra("myUsername",myUsername);
+                startActivity(intent);
+            }
+        });
+
+
+        lostsBT = (Button) findViewById(R.id.lostsBT);
+        lostsBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainScreenActivity.this, LostAndFoundsActivity.class);
+                intent.putExtra("myID", myID);
+                intent.putExtra("myUsername",myUsername);
+                startActivity(intent);
             }
         });
     }

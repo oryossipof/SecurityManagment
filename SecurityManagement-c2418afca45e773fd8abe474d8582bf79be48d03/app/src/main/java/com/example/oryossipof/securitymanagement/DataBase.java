@@ -5,7 +5,7 @@ import android.content.pm.LauncherApps;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
-
+import android.net.Uri;
 import com.firebase.client.Firebase;
 
 import com.firebase.client.FirebaseError;
@@ -55,16 +55,15 @@ class DataBase {
 
 
     }
-
-
-    public static void addEventToDataBase(String dateandTime, String myUsername, String description, String hour_minutes, String timetoshow) {
-
+    //public static void addEventToDataBase(String dateandTime, String myUsername, String description, String hour_minutes, String timetoshow) {
+        public static void addEventToDataBase(String dateandTime, String myUsername, String description, String hour_minutes,String timetoshow ,String donwloadImage) {
 
         Firebase mRefChild = myRef.child("Events");
         mRefChild.push();
         mRefChild.child(dateandTime).child(hour_minutes).child("time").setValue(timetoshow);
         mRefChild.child(dateandTime).child(hour_minutes).child("username").setValue(myUsername);
         mRefChild.child(dateandTime).child(hour_minutes).child("description").setValue(description);
+            mRefChild.child(dateandTime).child(hour_minutes).child("urlImage").setValue(donwloadImage);
 
 
     }

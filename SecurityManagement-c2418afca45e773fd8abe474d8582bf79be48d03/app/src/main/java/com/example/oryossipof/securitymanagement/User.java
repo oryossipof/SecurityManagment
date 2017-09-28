@@ -12,12 +12,14 @@ class User {
     public String username;
     public  String time;
     public String description;
+    public String urlImage;
 
-    public User(String description, String time, String username)
+    public User(String description, String time, String username,String urlImage)
     {
         this.username = username;
         this.time = time;
         this.description = description;
+        this.urlImage =urlImage;
 
     }
 
@@ -48,5 +50,12 @@ class User {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
     }
 }

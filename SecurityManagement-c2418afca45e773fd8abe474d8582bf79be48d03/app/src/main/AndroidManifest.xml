@@ -3,6 +3,7 @@
     package="com.example.oryossipof.securitymanagement">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -25,7 +26,9 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".UserManagementActivity" />
         <activity android:name=".AddEventAct" />
-        <activity android:name=".LogbookEvents"></activity>
+        <activity android:name=".LogbookEvents" />
+        <activity android:name=".LostAndFoundsActivity" />
+        <activity android:name=".PorterageActivity"></activity>
     </application>
 
 </manifest>

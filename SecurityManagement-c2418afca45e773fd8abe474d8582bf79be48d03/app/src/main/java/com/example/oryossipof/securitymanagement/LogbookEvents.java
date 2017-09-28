@@ -1,27 +1,30 @@
 package com.example.oryossipof.securitymanagement;
 
+import android.app.Activity;
+        import android.content.Context;
 import android.content.Intent;
-import android.os.*;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.net.Uri;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.widget.ArrayAdapter;
+        import android.widget.ImageView;
+        import android.widget.ListView;
+        import android.widget.Toast;
 
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.Query;
-import com.google.firebase.database.IgnoreExtraProperties;
+        import com.firebase.client.ChildEventListener;
+        import com.firebase.client.DataSnapshot;
+        import com.firebase.client.Firebase;
+        import com.firebase.client.FirebaseError;
+        import com.google.firebase.database.IgnoreExtraProperties;
+        import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class LogbookEvents extends AppCompatActivity {
-
+public class LogbookEvents extends Activity {
+    private Context context;
+    private ImageView iv;
     private Firebase mRef;
     private ListView mListView ;
     private ArrayList<User> mUsersName = new ArrayList<>();
@@ -34,6 +37,8 @@ public class LogbookEvents extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_logbook_events);
+        context= this;
+
         Intent intent = getIntent();
         this.myUsername = intent.getStringExtra("myUsername");
         this.myID = intent.getStringExtra("myID");
@@ -55,31 +60,16 @@ public class LogbookEvents extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
 
-                System.out.println("There are " + dataSnapshot.getChildrenCount() + " children");
                 for (DataSnapshot child: dataSnapshot.getChildren()) {
                     User people = child.getValue(User.class);
 
 
-              //  String value = dataSnapshot.getValue(String.class);
-                //for (DataSnapshot  d: dataSnapshot.getChildren()) {
 
-                   // User msg = d.getValue(User.class);
-
-                    /*
-                        String date =  d.getKey().toString();
-                        HashMap hashMap = (HashMap)d.getValue();
-                        Log.e("here:" , hashMap.toString());
-                        String time = hashMap.get("time").toString();
-                        String description = hashMap.get("description").toString();
-                        value = hashMap.get("username").toString();       //retrieve all information
+                    mUsersName.add(new User(people.getDescription(),people.getTime(),people.getUsername(),people.getUrlImage()));
 
 
-*/
-                        //mUsersName.add(value);
-                    mUsersName.add(new User(people.getDescription(),people.getTime(),people.getUsername()));
-                 /*   mUsersName.add(people.getDescription());
-                    mUsersName.add(people.getTime());
-                    mUsersName.add(people.getUsername());*/
+
+
                     adapter.notifyDataSetChanged();
                         mListView.setSelection(adapter.getCount() - 1);
 
