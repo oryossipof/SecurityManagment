@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.oryossipof.securitymanagement.MainScreenActivity"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:background="@drawable/gun1"
+
+    >
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="197dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/sec3"
+        android:layout_marginTop="5dp"
+
+
+
+        />
+
+    <Button
+        android:layout_marginTop="40dp"
+        android:layout_weight="5"
+        android:id="@+id/logBookBT"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="LogBook"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:background="@drawable/bulletbt"
+        />
+
+    <Button
+        android:layout_weight="5"
+        android:id="@+id/lostsBT"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Losts and founds"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:background="@drawable/bulletbt"/>
+
+    <Button
+        android:layout_weight="5"
+        android:id="@+id/depositsBT"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="DEPOSITS"
+        android:background="@drawable/bulletbt"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="#fff"/>
+
+    <Button
+        android:layout_weight="5"
+        android:id="@+id/porterageBT"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Porterage"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:background="@drawable/bulletbt"/>
+
+    <Button
+        android:id="@+id/userManagementBT"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="5"
+        android:background="@drawable/bulletbt"
+        android:text="Users Management"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+
+    <Button
+        android:layout_weight="5"
+        android:id="@+id/exitBT"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:layout_gravity="center"
+        android:background="@drawable/bulletbt"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+</LinearLayout>
