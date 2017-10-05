@@ -208,6 +208,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/timeText"
         android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         />
 
 

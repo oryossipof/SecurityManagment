@@ -87,9 +87,11 @@
             android:id="@+id/attachPhotobt"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-
+            android:background="@drawable/t"
             android:gravity="center"
             android:text="Attach Photo"
+            android:textStyle="bold"
+            android:textColor="#000"
 
             />
 
@@ -113,6 +115,9 @@
         android:id="@+id/cancelBT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/t"
+        android:textStyle="bold"
+        android:textColor="#000"
         android:text="Cancel" />
 
         <Button
@@ -120,7 +125,10 @@
             android:id="@+id/addEventBT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Event" />
+            android:text="Add Event"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:background="@drawable/t"/>
 
     </LinearLayout>
 
@@ -128,5 +136,8 @@
         android:id="@+id/showEventsBt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logbook Events" />
+        android:text="Logbook Events"
+        android:background="@drawable/t"
+        android:textStyle="bold"
+        android:textColor="#000"/>
 </LinearLayout>

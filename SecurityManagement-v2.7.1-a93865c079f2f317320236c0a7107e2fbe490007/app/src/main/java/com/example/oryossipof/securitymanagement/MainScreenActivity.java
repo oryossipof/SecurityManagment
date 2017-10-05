@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.transition.Visibility;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -12,7 +13,15 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import org.apache.http.client.HttpClient;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+
 public class MainScreenActivity extends AppCompatActivity {
+
     private DataBase db;
 private Button userManagementBT,exitBT, porterageBT,eventActBt,lostsBT,depositBt;;
     private String myID;
@@ -25,16 +34,20 @@ private Button userManagementBT,exitBT, porterageBT,eventActBt,lostsBT,depositBt
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Intent intent = getIntent();
+
         this.myUsername = intent.getStringExtra("myUsername");
         this.myID = intent.getStringExtra("myID");
         setContentView(R.layout.activity_main_screen);
         db = new DataBase(MainScreenActivity.this);
 
 
+
         userManagementBT = (Button) findViewById(R.id.userManagementBT);
         userManagementBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Intent intent = new Intent(MainScreenActivity.this, UserManagementActivity.class);
                 intent.putExtra("myID", myID);
                 intent.putExtra("myUsername",myUsername);
@@ -46,11 +59,13 @@ private Button userManagementBT,exitBT, porterageBT,eventActBt,lostsBT,depositBt
         {
             userManagementBT.setEnabled(false);
             userManagementBT.setTextColor(Color.GRAY);
+            userManagementBT.setVisibility(View.GONE);
         }
 
         eventActBt = (Button) findViewById(R.id.logBookBT);
       eventActBt.setOnClickListener(new View.OnClickListener() {
            public void onClick(View view) {
+
                 Intent intent = new Intent(MainScreenActivity.this, AddEventAct.class);
                intent.putExtra("myID", myID);
                intent.putExtra("myUsername",myUsername);
@@ -62,6 +77,7 @@ private Button userManagementBT,exitBT, porterageBT,eventActBt,lostsBT,depositBt
         exitBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 android.os.Process.killProcess(android.os.Process.myPid());
                 System.exit(1);
             }
@@ -73,6 +89,7 @@ private Button userManagementBT,exitBT, porterageBT,eventActBt,lostsBT,depositBt
         porterageBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(MainScreenActivity.this, PorterageActivity.class);
                 intent.putExtra("myID", myID);
                 intent.putExtra("myUsername",myUsername);

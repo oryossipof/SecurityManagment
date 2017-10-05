@@ -95,20 +95,21 @@ android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cancel"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:background="@drawable/t"
         />
 
 
-    <Button
-    android:id="@+id/addGroupBT"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Add Group"
-    />
+        <Button
+            android:id="@+id/addGroupBT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Group"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:background="@drawable/t"/>
 
 
-
-
-
-
-</LinearLayout>
+    </LinearLayout>
 </LinearLayout>
