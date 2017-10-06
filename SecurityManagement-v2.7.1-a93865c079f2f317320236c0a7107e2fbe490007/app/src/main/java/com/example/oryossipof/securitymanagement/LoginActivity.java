@@ -21,6 +21,7 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
@@ -53,6 +54,12 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                final String token = FirebaseInstanceId.getInstance().getToken();
+
+                String type = "login";
+                BackgroundWorker backgroundWorker = new BackgroundWorker(LoginActivity.this);
+                backgroundWorker.execute(type,token);
                 login();
             }
         });

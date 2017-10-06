@@ -54,12 +54,6 @@
         <activity
             android:name=".AddGroupActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".DepositsActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Deposits_Documentation"
-            android:screenOrientation="portrait" />
 
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
@@ -67,6 +61,17 @@
             </intent-filter>
         </service>
 
+        <service
+            android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".DepositsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Deposits_Documentation"
+            android:screenOrientation="portrait" ></activity>
     </application>
 
 </manifest>

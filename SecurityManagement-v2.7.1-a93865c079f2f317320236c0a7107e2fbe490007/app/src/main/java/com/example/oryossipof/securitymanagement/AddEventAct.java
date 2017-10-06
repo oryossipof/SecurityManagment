@@ -122,12 +122,18 @@ public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnR
                         DataBase.addEventToDataBase(currentDateandTime3, myUsername, str, hour_minutes, currentDateandTime2, stringUri);
                        setResult(RESULT_OK, null);
                         Toast.makeText(getBaseContext(), "Event successfully registered to the logbook!", Toast.LENGTH_LONG).show();
+                        String type = "event";
+                        BackgroundWorker backgroundWorker = new BackgroundWorker(AddEventAct.this);
+                        backgroundWorker.execute(type,"Event Added",str);
 
                    }
                     else{
                         DataBase.addEventToDataBase(currentDateandTime3, myUsername, str, hour_minutes, currentDateandTime2, "");
                         setResult(RESULT_OK, null);
                         Toast.makeText(getBaseContext(), "Event successfully registered to the logbook!", Toast.LENGTH_LONG).show();
+                        String type = "event";
+                        BackgroundWorker backgroundWorker = new BackgroundWorker(AddEventAct.this);
+                        backgroundWorker.execute(type,"Event Added",str);
 
                     }
 
