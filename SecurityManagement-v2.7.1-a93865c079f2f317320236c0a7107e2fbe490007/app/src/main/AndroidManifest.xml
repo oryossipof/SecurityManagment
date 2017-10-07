@@ -72,6 +72,7 @@
         <activity
             android:name=".Deposits_Documentation"
             android:screenOrientation="portrait" />
+        <activity android:name=".SeeItFull"></activity>
     </application>
 
 </manifest>

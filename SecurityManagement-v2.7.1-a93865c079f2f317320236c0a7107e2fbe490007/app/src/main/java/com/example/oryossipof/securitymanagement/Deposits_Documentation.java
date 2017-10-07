@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
@@ -63,6 +64,8 @@ public class Deposits_Documentation extends AppCompatActivity {
         day = cal.get(Calendar.DAY_OF_MONTH);
         month2 = cal.get(Calendar.MONTH);
         year2 = cal.get(Calendar.YEAR);
+
+
 
         selectMonthBt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,5 +151,9 @@ public class Deposits_Documentation extends AppCompatActivity {
         });
 
 
+
+
+
     }
+
 }

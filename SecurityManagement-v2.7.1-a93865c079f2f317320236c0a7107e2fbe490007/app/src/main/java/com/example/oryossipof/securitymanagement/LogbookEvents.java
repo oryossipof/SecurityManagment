@@ -113,6 +113,24 @@ public class LogbookEvents extends Activity {
 
 
 
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                User obj =(User) mListView.getAdapter().getItem(position);
+              //  Uri uri = Uri.parse(obj.getUrlImage());
+                if(obj.getUrlImage() != "") {
+
+
+                    Intent intent = new Intent(LogbookEvents.this, SeeItFull.class);
+                    intent.putExtra("uri", obj.getUrlImage());
+                    startActivity(intent);
+                }
+            }
+        });
+
+
+
 
 
                /* User obj =(User) mListView.getAdapter().getItem(position);
