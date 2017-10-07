@@ -17,6 +17,7 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import static android.R.attr.port;
@@ -101,7 +102,7 @@ public class PorterageMonthActivity extends AppCompatActivity {
 
                         porterageList.add(new PorterageIntity(port.getNumhands(), port.getNumpeople(), port.getNumstuff(), port.getStatus(), port.getDate(),port.getTotalMoney(),port.getTotalPeople()));
                         sum+=Double.parseDouble(port.getTotalMoney());
-                        totalMoneyInMonth.setText(" $" + sum + " ");
+                        totalMoneyInMonth.setText(" $" + new DecimalFormat("##.##").format(sum) + " ");
 
                         adapter.notifyDataSetChanged();
                         pListView.setSelection(adapter.getCount() - 1);

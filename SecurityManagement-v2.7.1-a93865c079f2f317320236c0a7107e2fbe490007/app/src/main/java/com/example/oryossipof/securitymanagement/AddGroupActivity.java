@@ -142,10 +142,10 @@ public class AddGroupActivity extends AppCompatActivity {
             stuffNum.setError("#Stufff Cant Be Greater Than #People");
             flag = false;
         }
-        else if (stuffNumInt<=0)
+        else if (stuffNumInt<0)
         {
             flag = false;
-            stuffNum.setError("Need To Be Greater Than 0");
+            stuffNum.setError("Can't Be Less Than 0");
         }
         else if(groupNumInt<=0)
         {

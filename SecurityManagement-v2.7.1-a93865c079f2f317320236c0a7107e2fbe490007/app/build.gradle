@@ -53,7 +53,7 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:11.4.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'org.jetbrains:annotations-java5:15.0'
-    testCompile 'junit:junit:4.12'
     compile 'junit:junit:4.12'
+    testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'

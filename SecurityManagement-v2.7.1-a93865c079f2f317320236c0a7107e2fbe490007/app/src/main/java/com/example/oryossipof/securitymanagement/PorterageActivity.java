@@ -17,6 +17,7 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Currency;
@@ -130,7 +131,7 @@ private String myUsername, myID;
                                 String total =  f.child("totalMoney").getValue().toString();
 
                                 totalSum+= Double.parseDouble(total);
-                                totalPorterageTxt.setText(totalSum + "");
+                                totalPorterageTxt.setText(new DecimalFormat("##.##").format(totalSum) + "");
 
 
                             }
@@ -180,7 +181,7 @@ private String myUsername, myID;
 
                     float t = (float)Double.parseDouble(totalPorterageTxt.getText().toString());
 
-                    totalPorterageTxt.setText((t - wasToReduce)+"");
+                    totalPorterageTxt.setText((new DecimalFormat("##.##").format(t - wasToReduce))+"");
 
                 }
 
@@ -189,7 +190,7 @@ private String myUsername, myID;
 
                     try {
                         float t = (float)Double.parseDouble(totalPorterageTxt.getText().toString());
-                        totalPorterageTxt.setText(t+"");
+                        totalPorterageTxt.setText(new DecimalFormat("##.##").format(t)+"");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

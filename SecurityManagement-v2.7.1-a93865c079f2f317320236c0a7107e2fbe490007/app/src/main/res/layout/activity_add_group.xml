@@ -221,7 +221,7 @@ android:layout_centerHorizontal="true"
         >
         <Button
             android:id="@+id/porterageThisMonth"
-            android:layout_width="200dp"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:text="Porterage This Month"
             android:textColor="#000"
